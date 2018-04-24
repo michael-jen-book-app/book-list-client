@@ -1,0 +1,4 @@
+let env = {
+    locationProtocal = 'https:';
+    
+}
