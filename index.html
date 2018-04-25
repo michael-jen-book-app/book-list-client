@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html></html>
 <head>
-  <title>asdfasdfdsf</title>
+  <title>BLOG APP TITLE</title>
 </head>
 <body>
   <main>
     <h1>hello world<h1>
       <div id='book-list-holder-placeholder'></div>
     <section class="container">
-      <ul>Availible books
-      </ul>
-      <p>book count</p>
+      <script id="book-list-template" type="text/x-handlebars-template">
+        <article class="clearfix" data-author="{{author}}">
+          <header>
+            <h1>{{title}}</h1>
+            <div class="byline">
+              By <address>{{author}}</address>
+            </div>
+            <h3>{{isbn}}
+            <img src="{{img_url}}" alt="{{title}} by {{author}}">
+            <p>{{description}}</p>
+          </header>
+        </article>
+      </script>
     </section>
     <section class="about"></section>
   </main>
   <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-  <script>
-  (function(){
-     $.getJSON("https://swapi.co/api/starships")
-     .then(ships => console.log(ships))
-     .catch( console.error );
-   })();
-   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
 </body>
