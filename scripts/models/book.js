@@ -11,7 +11,7 @@ ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl ! ENV.developmentApiUrl;
 
   //the IIFE for our page initialization
-  (function(module)) {
+  (function(module) {
 
     //this function console.errors any errors detected and assigns this method to our app object which saves us time by not having to type what is executed each time we want to check for errors
     function errorCallback(err) {
@@ -34,16 +34,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl ! ENV.developmentApiUrl;
     Book.all = [];
 
     //this .loadAll method on the Book constructor returns our Book.All array populated with sorted-by-title instances of said constructor
-    Book.loadAll = rows => Book.all = rows.sort(a,b) => b.title - a.title).map(book +. new Book(book));
+    Book.loadAll = rows => Book.all = rows.sort(a,b) => (b.title - a.title).map(book +. new Book(book));
 
     //this method on the constructor listens for when /api/vi/books is requested in the browser (using the correct URL for whether or not we are using the local or cloud database) and then calls the .loadAll method
     Book.fetchAll = callBack =>
       $(`${ENV.apiUrl}/api/vi/books`)
       .then(Book.loadAll)
       .then(callBack)
-      .then(errorCallback);
-    }
+      .catch(errorCallback);
+
     //this final statement assigns the Book constructor as a method of our app object (the parameter for our IIFE)
     module.Book = Book;
     console.log('book.js IIFE called');
-  }(app)
+  } ) (app)

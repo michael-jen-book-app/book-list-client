@@ -1,11 +1,11 @@
 const errorView = {};
 
-(function(error)) {
+(function(module) {
     errorView.initErrorPage(err) = {
         $('.container').hide();
         $('.error-view').show();
         $('#error-message').empty();
-    
+
         let template= Handlebars.compile($(`error-template`).text());
         $('#error-message').append(template(err));
     }
@@ -13,4 +13,5 @@ const errorView = {};
         console.error(error);
         errorView.initErrorPage(err);
     }
-}
+    module.errorView = errorView;
+}(errorView))

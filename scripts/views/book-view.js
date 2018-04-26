@@ -1,15 +1,18 @@
-const bookView = {};
+'use strict';
 
-(function(module)) {
+var app = app || {};
 
-  bookView.initIndexPage() =  {
+(function(module) {
+  const bookView = {};
+  bookView.initIndexPage = () {
     $('.container').hide();
     $('#book-view').show();
-    Book.all.map(x => $('#booklist').append(x));
+    app.Book.all.map(x => $('#book-list').append(x));
   }
-    $('document').ready( => {
-      Book.fetchAll(bookView.initIndexPage);
-    });
+    module.bookView = bookView;
+}(app));
 
-
-}(bookView)
+$('document').ready( => {
+  console.log('testo');
+  app.Book.fetchAll(app.bookView.initIndexPage);
+});

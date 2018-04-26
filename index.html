@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html></html>
-<head>
-  <title>BLOG APP TITLE</title>
-  <script id="book-list-template" type="text/x-handlebars-template">
-        <h1>{{title}}</h1>
-        <div class="byline">
-          By <address>{{author}}</address>
-        </div>
-        <h3>{{isbn}}
-        <img src="{{img_url}}" alt="{{title}} by {{author}}">
-        <p>{{description}}</p>
-  </script>
-</head>
+<html>
+  <head>
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <title>BLOG APP TITLE</title>
+    <script id="book-list-template" type="text/x-handlebars-template">
+          <h1>{{title}}</h1>
+          <div>
+            By <address>{{author}}</address>
+          </div>
+          <h3>{{isbn}}</h3>
+          <img src="{{img_url}}" alt="{{title}} by {{author}}">
+          <p>{{description}}</p>
+    </script>
+  </head>
 <body>
   <main>
     <h1>hello world<h1>
-      <h2>this is the document</h2>
-      <div id='book-list-holder-placeholder'></div>
+    <h2>this is the document</h2>
+    <div id='book-list-template'></div>
     <section class="container" id="specific-book">
 
     </section>
     <section class="container" id="add-new-book">
+      <form>
 
+      </form>
     </section>
 
-    <section class="container" id="list-of-books">
+    <section class="container" id="book-list">
 
     </section>
-    <section class="about"></section>
   </main>
   <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-  <script scr="/scripts/models/book.js"></script>
-  <script scr="/scripts/views/book-view.js"></script>
-  <!-- <script scr="/scripts/views/error-view.js"></script>
-  <script scr="/scripts/views/routes.js"></script> -->
-  <!-- <script>
-      app.Book.fetchAll(bookView.initIndexPage);
-      console.log('book.fetchall called');
-    </script> -->
+  <script scr="scripts/models/book.js"></script>
+  <script scr="../scripts/views/book-view.js"></script>
+  <script scr="../scripts/views/error-view.js"></script>
+  <!-- <script scr="/scripts/views/routes.js"></script> -->
 </body>
+</html>
