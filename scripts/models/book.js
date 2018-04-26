@@ -45,4 +45,5 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl ! ENV.developmentApiUrl;
     }
     //this final statement assigns the Book constructor as a method of our app object (the parameter for our IIFE)
     module.Book = Book;
+    console.log('book.js IIFE called');
   }(app)
